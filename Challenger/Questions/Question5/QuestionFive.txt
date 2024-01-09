@@ -1,0 +1,45 @@
+- (PT-BR) Tendo em vista duas abordagens de backend: uma utilizando um ORM (como
+  Prisma e Sequelize) e outra utilizando apenas um query builder (como o Knex),
+  quais as vantagens e desvantagens de cada abordagem?
+
+- (EN) Considering two backend approaches: one using an ORM (like
+  Prisma and Sequelize) and another using just a query builder (like Knex),
+  What are the advantages and disadvantages of each approach?
+
+(PT-BR):
+ORM: 
+- Vantagens: 
+    - Permite uma boa modelagem e abstração no acesso a bancos de dados, possibilitando uma interação 
+      menos complexa com o mesmo;
+    - ORMs disponibilização formas de acesso independentes a banco de dados, tornando sua aplicação bem
+      versatil e limpa para o código.
+- Desvantagens: 
+    - Causam uma queda de desemprenho no processamento dos algoritmos em que são aplicadas;
+    - Possuem uma curva de aprendizado complexa.
+
+Query Builder
+- Vantagens: 
+    - Melhor controle e otimazação de consultas SQL;
+    - Poderosa para operação CRUD de baixa complexidade;
+- Desvantagens: 
+    - A clareza e legibilidade das consultas decai abruptamente conforme a complexidade da operação aumenta;
+    - Necessita de mais operações manuais, em comparação a ORMs.
+
+(EN):
+ORM:
+- Benefits:
+    - Allows good modeling and abstraction when accessing databases, enabling interaction
+      less complex with the same;
+    - ORMs provide independent forms of access to the database, making your application well
+      versatile and clean for code.
+- Disadvantages:
+    - Cause a drop in performance in the processing of the algorithms to which they are applied;
+    - They have a complex learning curve.
+
+Query Builder
+- Benefits:
+    - Better control and optimization of SQL queries;
+    - Powerful for low complexity CRUD operation;
+- Disadvantages:
+    - The clarity and readability of queries declines abruptly as the complexity of the operation increases;
+    - Requires more manual operations, compared to ORMs.

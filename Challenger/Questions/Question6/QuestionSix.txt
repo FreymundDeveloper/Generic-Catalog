@@ -1,0 +1,23 @@
+- (PT-BR) Faça uma query em SQL que traga em cada linha o nome de jogadores que se
+  enfrentaram mais de duas vezes, onde em cada partida a soma dos pontos foi
+  maior que 30 e a duração do jogo foi maior que 90 minutos. Não pode haver
+  resultados repetidos.
+
+- (EN) Make a query in SQL that brings in each line the name of players who are
+  faced more than twice, where in each match the sum of points was
+  greater than 30 and the duration of the game was greater than 90 minutes. There can not be
+  repeated results.
+
+SELECT DISTINCT J1.nome AS jogador1, J2.nome AS jogador2
+FROM Jogador J1
+JOIN Partidas P1 ON J1.id = P1.jogador1_id
+JOIN Jogador J2 ON J2.id = P1.jogador2_id
+JOIN Partidas P2 ON (J1.id = P2.jogador1_id OR J1.id = P2.jogador2_id)
+                 AND (J2.id = P2.jogador1_id OR J2.id = P2.jogador2_id)
+WHERE P1.id < P2.id
+  AND P1.pontos_jogador1 + P1.pontos_jogador2 > 30
+  AND P1.duracao > 90
+  AND P2.pontos_jogador1 + P2.pontos_jogador2 > 30
+  AND P2.duracao > 90
+GROUP BY jogador1, jogador2
+HAVING COUNT(*) > 2;

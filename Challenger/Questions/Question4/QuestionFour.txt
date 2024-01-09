@@ -1,0 +1,13 @@
+- (PT-BR) Explique como o conceito de middlewares no Express.js pode ser utilizado para
+  evitar repetição de código.
+
+- (EN) Explain how the concept of middleware in Express.js can be used to
+  avoid code repetition.
+
+(PT-BR) Por meio de encapsulamento de lógicas. Esse conceito basicamente visa que lógicas seja
+separadas em chamadas externas, permitindo uma ampla reutilização das mesma (resumindo, 
+Modulação).
+
+(EN) Through encapsulation of logics. This concept basically aims for logic to be
+separated into external calls, allowing broad reuse of them (in short,
+Modulation).

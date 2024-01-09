@@ -1,0 +1,23 @@
+- (PT-BR) Você julga que este código é limpo? Aponte quais erros o programador
+  cometeu que prejudicaram a qualidade do código. Obs: não existe nenhum bug
+  escondido no código.
+
+- (EN) Do you think this code is clean? Point out what errors the programmer
+  committed that harmed the quality of the code. Note: there is no bug
+  hidden in the code.
+
+(PT-BR) Não, devido a erros como:
+- Má nomenclatura de variáveis, que afeta diretamente a legibilidade do código;
+- A falta de indentação adequada no código, juntamente com uma compactação exagerada (tudo muito junto); 
+- Não utilização de uma modulação adquada no código (conteudo poderia facilmente ser dividido em duas funções);
+- A falta de alguns comentários para explicar a funcionalidade do código;
+- Não utilzação de "const" em vez de "let" em variáveis que não sofrem alteração em seu valor, como "M" ou "ORDMAX";
+- Uso indevido da caixa alta nas variáveis, dependendo da linguagem pode afetar diretamemte o funcionamento do código (camelCase recomendado);
+
+(EN) No, due to errors such as:
+- Poor variable naming, which directly affects code readability;
+- The lack of adequate indentation in the code, together with exaggerated compaction (everything too close together);
+- Failure to use appropriate modulation in the code (content could easily be divided into two functions);
+- The lack of some comments to explain the functionality of the code;
+- Not using "const" instead of "let" in variables that do not change their value, such as "M" or "ORDMAX";
+- Improper use of uppercase in variables, depending on the language, can directly affect the functioning of the code (camelCase recommended);
