@@ -1,4 +1,3 @@
-// server.js
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
@@ -10,15 +9,12 @@ const port = 3001;
 app.use(cors());
 
 app.get('/products', (req, res) => {
-  const { types, sellers, sports, availableSizes, priceRange } = req.query;
+  const { types, sellers, sports, availableSizes, priceRange, name } = req.query;
 
   let filteredProducts = data;
 
-  console.log('Received types:', types);
-
   if (types !== undefined) {
     const selectedTypes = Array.isArray(types) ? types : types.split(',');
-    console.log(selectedTypes)
 
     filteredProducts = filteredProducts.filter(product => selectedTypes.includes(product.type));
   }
@@ -47,6 +43,11 @@ app.get('/products', (req, res) => {
     const maxPrice = parseFloat(priceRange);
 
     if (!isNaN(maxPrice)) filteredProducts = filteredProducts.filter(product => product.price <= maxPrice);
+  }
+
+  if (name !== undefined) {
+    const lowercaseName = name.toLowerCase();
+    filteredProducts = filteredProducts.filter(product => product.name.toLowerCase().includes(lowercaseName));
   }
 
   res.json(filteredProducts);
