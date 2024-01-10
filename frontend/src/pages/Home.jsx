@@ -15,14 +15,20 @@ export const Home = () => {
 
     const handleSidebarFilterChange = (filterContent) => {
         setSidebarFilter(filterContent);
-        console.log(sidebarFilter)//<- Use one UseEffect
+        console.log(sidebarFilter) // <- Use one UseEffect
     };
 
     return (
         <StyledContainer>
             <Navbar />
-            <Sidebar initialContent={sidebarFilter} onContentChange={handleSidebarFilterChange}/>
-            <Card cardData={objTest}></Card>
+            <ContentContainer>
+                <SidebarContainer>
+                    <Sidebar initialContent={sidebarFilter} onContentChange={handleSidebarFilterChange} />
+                </SidebarContainer>
+                <CardContainer>
+                    <Card cardData={objTest} />
+                </CardContainer>
+            </ContentContainer>
         </StyledContainer>
     );
 };
@@ -32,13 +38,23 @@ const StyledContainer = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 100vh;
+    width: 100%;
     height: 100vh;
     margin: 0;
-
-    @media (max-width: 548px) {
-        max-width: 40vh;
-    }
 `;
 
-export default Home;
+const ContentContainer = styled.div`
+    display: flex;
+    position: relative;
+    margin-top: 10px;
+`;
+
+const SidebarContainer = styled.div`
+    position: fixed;
+    top: 0;
+    left: 0;
+`;
+
+const CardContainer = styled.div`
+    margin-left: 220px;
+`;
