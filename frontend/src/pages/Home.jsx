@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Card, Navbar } from '../components';
+import { Card, Navbar, Sidebar } from '../components';
 
 const objTest = {
     imageUrl: "https://static.lojanba.com/produtos/camiseta-regata-nba-adidas-swingman-chicago-bulls-rose/68/D13-0209-068/D13-0209-068_zoom1.jpg?ts=1600856952",
@@ -11,10 +11,17 @@ const objTest = {
 }
 
 export const Home = () => {
+    const [sidebarFilter, setSidebarFilter] = useState("");
+
+    const handleSidebarFilterChange = (filterContent) => {
+        setSidebarFilter(filterContent);
+        console.log(sidebarFilter)//<- Use one UseEffect
+    };
 
     return (
         <StyledContainer>
             <Navbar />
+            <Sidebar initialContent={sidebarFilter} onContentChange={handleSidebarFilterChange}/>
             <Card cardData={objTest}></Card>
         </StyledContainer>
     );
