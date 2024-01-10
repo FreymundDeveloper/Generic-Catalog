@@ -1,11 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
+import { ButtonClose } from '../../components';
 
 export const Modal = ({ isOpen, description, seller, onClose }) => {
     return (
         <ModalWrapper isOpen={isOpen}>
             <ModalContent>
-                <CloseButton onClick={onClose}>&times;</CloseButton>
+                <ButtonClose onClose={onClose}></ButtonClose>
                 <SellerTitle>Seller: {seller}</SellerTitle>
                 <AboutContent>About the product:</AboutContent>
                 <Description>{description}</Description>
@@ -33,14 +34,6 @@ const ModalContent = styled.div`
     padding: 20px;
     position: relative;
     border-radius: 12px;
-`;
-
-const CloseButton = styled.span`
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    color: white;
 `;
 
 const SellerTitle = styled.h2`

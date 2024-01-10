@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Modal } from '../Modal/Modal';
+import { Modal } from '../../components';
 
 export const Card = ({ cardData }) => {
     const { imageUrl, name, price, description, seller } = cardData;
