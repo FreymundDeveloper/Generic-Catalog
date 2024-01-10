@@ -1,24 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { Modal } from '../components';
+import { Card } from '../components';
+
+const objTest = {
+    imageUrl: "https://static.lojanba.com/produtos/camiseta-regata-nba-adidas-swingman-chicago-bulls-rose/68/D13-0209-068/D13-0209-068_zoom1.jpg?ts=1600856952",
+    seller: "Adidased",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    price: 399.99,
+    name: "Regata do Chicago Bulls"
+}
 
 export const Home = () => {
 
-    const [modalOpen, setModalOpen] = useState(false);
-
-    const openModal = () => {
-        setModalOpen(true);
-    };
-
-    const closeModal = () => {
-        setModalOpen(false);
-    };
-
     return (
         <StyledContainer>
-            <button onClick={openModal}>Abrir Modal</button>
-            <Modal isOpen={modalOpen} description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." 
-                seller="Adidased" onClose={closeModal} />
+            <Card cardData={objTest}></Card>
         </StyledContainer>
     );
 };

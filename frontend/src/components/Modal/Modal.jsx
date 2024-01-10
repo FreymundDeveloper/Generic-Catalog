@@ -31,7 +31,7 @@ const ModalContent = styled.div`
     width: 50%;
     max-width: 400px;
     padding: 20px;
-    position: relative; /* Adicionado para posicionar o botão dentro do ModalContent */
+    position: relative;
     border-radius: 12px;
 `;
 
