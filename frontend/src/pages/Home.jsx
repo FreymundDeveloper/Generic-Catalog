@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Card } from '../components';
+import { Card, Navbar } from '../components';
 
 const objTest = {
     imageUrl: "https://static.lojanba.com/produtos/camiseta-regata-nba-adidas-swingman-chicago-bulls-rose/68/D13-0209-068/D13-0209-068_zoom1.jpg?ts=1600856952",
@@ -14,6 +14,7 @@ export const Home = () => {
 
     return (
         <StyledContainer>
+            <Navbar />
             <Card cardData={objTest}></Card>
         </StyledContainer>
     );
@@ -24,10 +25,9 @@ const StyledContainer = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 10px;
     width: 100vh;
-    margin: 0 auto;
-    margin-top: 40px;
+    height: 100vh;
+    margin: 0;
 
     @media (max-width: 548px) {
         max-width: 40vh;
