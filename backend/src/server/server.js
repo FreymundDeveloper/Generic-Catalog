@@ -53,6 +53,12 @@ app.get('/products', (req, res) => {
   res.json(filteredProducts);
 });
 
-app.listen(port, () => {
-  console.log(`Server is running at http://localhost:${port}`);
-});
+const server = app.listen(port, () => {
+    console.log(`Server is running at http://localhost:${port}`);
+  });
+  
+  const closeServer = (callback) => { // For Jest Configuration.
+    server.close(callback);
+  };
+  
+  module.exports = { app, server, closeServer };
