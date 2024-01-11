@@ -20,7 +20,7 @@ All answers to questions(1 to 6) are found in ".txt" or ".js" files within "./ch
 
 The route is linked to the address "localhost:3001/products ...". The backend runs on port 3001 and the frontend on port 3000. Below is a specification of the route's QueryParms.
 
-* Get: /results - QueryParms: { types, sellers, sports, availableSizes, price, name };
+* Get: /products - QueryParms: { types, sellers, sports, availableSizes, price, name };
 
 ## Running the app
 
