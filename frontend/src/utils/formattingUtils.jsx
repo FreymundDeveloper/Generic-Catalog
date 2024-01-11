@@ -13,7 +13,7 @@ export const arrayToQueryString = (title, arr) => {
 }
 
 export const queryParamsBuilder = (dataArray) => {
-    const parameters = ['type', 'availableSizes', 'seller', 'sport'];
+    const parameters = ['types', 'availableSizes', 'sellers', 'sports'];
     const resultArray = [];
 
     dataArray.forEach((value, index) => {

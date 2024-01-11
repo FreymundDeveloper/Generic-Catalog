@@ -9,18 +9,21 @@ export const Home = () => {
     const [objTest, setObjTest] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:3001/products')
+        let apiUrl = 'http://localhost:3001/products';
+    
+        if (sidebarFilter !== "") {
+            apiUrl += sidebarFilter;
+        }
+    
+        axios.get(apiUrl)
             .then(response => {
                 setObjTest(response.data);
             })
             .catch(error => {
                 console.error('Error to found data:', error);
             });
-    }, []);
-
-    useEffect(() => {
-        console.log(sidebarFilter)
     }, [sidebarFilter]);
+    
 
     const handleSidebarFilterChange = (filterContent) => {
         setSidebarFilter(queryParamsBuilder(filterContent));

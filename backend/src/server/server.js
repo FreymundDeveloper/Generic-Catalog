@@ -9,7 +9,7 @@ const port = 3001;
 app.use(cors());
 
 app.get('/products', (req, res) => {
-    const { types, sellers, sports, availableSizes, priceRange, name } = req.query;
+    const { types, sellers, sports, availableSizes, price, name } = req.query;
 
     let filteredProducts = data;
 
@@ -39,8 +39,8 @@ app.get('/products', (req, res) => {
         });
     }
 
-    if (priceRange !== undefined) {
-        const maxPrice = parseFloat(priceRange);
+    if (price !== undefined) {
+        const maxPrice = parseFloat(price);
 
         if (!isNaN(maxPrice)) filteredProducts = filteredProducts.filter(product => product.price <= maxPrice);
     }
