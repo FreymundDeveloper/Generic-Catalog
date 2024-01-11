@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ContainerNavbar, ButtonNavbar } from '../../components';
+import { ContainerNavbar, ButtonNavbar, ContainerDivider } from '../../components';
 
 import LogoNav from '../../assets/imgs/logo.png'
 
@@ -16,7 +16,7 @@ export const Navbar = () => {
             </LeftSection>
             <RightSection>
                 <ButtonNavbar>About Us</ButtonNavbar>
-                <Divider />
+                <ContainerDivider orientation={"height"} />
                 <ButtonNavbar>Login</ButtonNavbar>
             </RightSection>
         </ContainerNavbar>
@@ -39,11 +39,4 @@ const RightSection = styled.div`
     display: flex;
     margin-right: 10px;
     padding-right: 2px;
-`;
-
-const Divider = styled.div`
-    height: 30px;
-    width: 1px;
-    background-color: white;
-    border-radius: 12px;
 `;

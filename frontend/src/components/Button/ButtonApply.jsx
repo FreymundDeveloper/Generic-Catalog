@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { darken } from 'polished';
 
 export const ButtonApply = ({ onClick }) => {
     return (
@@ -12,7 +13,7 @@ export const ButtonApply = ({ onClick }) => {
 const Container = styled.div`
     display: flex;
     justify-content: flex-end;
-    padding-top: 2px;
+    padding-top: 5px;
 `;
 
 const Button = styled.button`
@@ -23,4 +24,8 @@ const Button = styled.button`
     cursor: pointer;
     border-radius: 12px;
     font-size: 0.8rem;
+
+    &:hover {
+        background-color: ${(props) => darken(0.1, props.theme.color.navbarColor)};
+    }
 `;

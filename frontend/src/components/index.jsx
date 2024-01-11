@@ -2,6 +2,7 @@ export * from './Button/ButtonClose';
 export * from './Button/ButtonApply';
 export * from './Button/ButtonNavbar';
 export * from './Container/ContainerCard';
+export * from './Container/ContainerDivider';
 export * from './Container/ContainerNavbar';
 export * from './Container/ContainerSidebar';
 export * from './Modal/Modal';
