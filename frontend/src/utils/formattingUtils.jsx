@@ -7,4 +7,26 @@ export const formatToQueryParam = (title) => {
       .replace(/\s+/g, '_')
       .replace(/_./g, match => match.charAt(1).toUpperCase());
 };
-  
+
+export const arrayToQueryString = (title, arr) => {
+    return `${title}=${arr.join(",")}`;
+}
+
+export const queryParamsBuilder = (dataArray) => {
+    const parameters = ['type', 'availableSizes', 'seller', 'sport'];
+    const resultArray = [];
+
+    dataArray.forEach((value, index) => {
+        if (index < dataArray.length - 1) {
+            if (Array.isArray(value) && value.length > 0) {
+                const queryString = arrayToQueryString(parameters[index], value);
+                resultArray.push(queryString);
+            }
+        } else {
+            resultArray.push(value);
+        }
+    });
+    const finalResult = resultArray.join("&");
+
+    return `?${finalResult}`;
+};

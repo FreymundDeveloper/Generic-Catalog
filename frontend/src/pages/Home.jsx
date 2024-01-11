@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 import { ContainerCard, Navbar, Sidebar } from '../components';
+import { queryParamsBuilder } from '../utils/formattingUtils'
 
 export const Home = () => {
     const [sidebarFilter, setSidebarFilter] = useState("");
@@ -22,7 +23,7 @@ export const Home = () => {
     }, [sidebarFilter]);
 
     const handleSidebarFilterChange = (filterContent) => {
-        setSidebarFilter(filterContent);
+        setSidebarFilter(queryParamsBuilder(filterContent));
     };
 
     return (
