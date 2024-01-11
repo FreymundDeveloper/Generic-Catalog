@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { formatTitle } from '../../utils/formattingUtils';
+import { formatToItem  } from '../../utils/formattingUtils';
 import { ContainerCheckbox } from '../../components';
 
 export const TopicGeneral = ({ title, options, onSelectionChange }) => {
     const [selectedOptions, setSelectedOptions] = useState([]);
-    const formattedTitle = formatTitle(title);
+    const formattedTitle = formatToItem(title);
 
     const handleCheckboxChange = (option) => {
         const isSelected = selectedOptions.includes(option);
