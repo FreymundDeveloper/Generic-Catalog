@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { darken } from 'polished';
-import { ContainerNavbar } from '../../components';
+import { ContainerNavbar, ButtonNavbar } from '../../components';
 
 import LogoNav from '../../assets/imgs/logo.png'
 
@@ -16,9 +15,9 @@ export const Navbar = () => {
                 <Logo src={LogoNav} alt="Logo" />
             </LeftSection>
             <RightSection>
-                <Button>About Us</Button>
+                <ButtonNavbar>About Us</ButtonNavbar>
                 <Divider />
-                <Button>Login</Button>
+                <ButtonNavbar>Login</ButtonNavbar>
             </RightSection>
         </ContainerNavbar>
     );
@@ -40,18 +39,6 @@ const RightSection = styled.div`
     display: flex;
     margin-right: 10px;
     padding-right: 2px;
-`;
-
-const Button = styled.button`
-    background-color: ${(props) => props.theme.color.navbarColor};
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    cursor: pointer;
-
-    &:hover {
-        background-color: ${(props) => darken(0.1, props.theme.color.navbarColor)};
-    }
 `;
 
 const Divider = styled.div`
