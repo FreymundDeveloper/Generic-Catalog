@@ -30,8 +30,8 @@ const SidebarWrapper = styled.div`
 `;
 
 const SidebarContent = styled.div`
-    padding: 20px;
-    margin-top: 40px;
+    padding: 6px;
+    margin-top: 35px;
     text-align: left;
     color: white;
     flex-direction: column;
