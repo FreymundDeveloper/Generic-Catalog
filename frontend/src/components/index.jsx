@@ -4,6 +4,7 @@ export * from './Button/ButtonNavbar';
 export * from './Container/ContainerCard';
 export * from './Container/ContainerCheckbox';
 export * from './Container/ContainerDivider';
+export * from './Container/ContainerHome';
 export * from './Container/ContainerNavbar';
 export * from './Container/ContainerSidebar';
 export * from './Input/InputSearch';

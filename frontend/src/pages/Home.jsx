@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
-import { ContainerCard, Navbar, Sidebar } from '../components';
+import { ContainerCard, ContainerHome, Navbar, Sidebar } from '../components';
 import { queryParamsBuilder } from '../utils/formattingUtils'
 
 export const Home = () => {
@@ -30,25 +30,15 @@ export const Home = () => {
     };
 
     return (
-        <StyledContainer>
+        <ContainerHome>
             <Navbar />
             <ContentContainer>
                 <Sidebar initialContent={sidebarFilter} onContentChange={handleSidebarFilterChange} />
                 <ContainerCard contentFound={objTest}/>
             </ContentContainer>
-        </StyledContainer>
+        </ContainerHome>
     );
 };
-
-const StyledContainer = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    height: 100vh;
-    margin: 0;
-`;
 
 const ContentContainer = styled.div`
     display: flex;
