@@ -27,7 +27,7 @@ describe('GET /products', () => {
     });
 
     it('Route Get Return With Query Params Test', async () => {
-        const response = await request(app).get('/products?priceRange=500');
+        const response = await request(app).get('/products?price=500');
 
         expect(response.status).toBe(200);
     });
