@@ -35,6 +35,7 @@ const InputSearchStyle = styled.input`
     border-radius: 6px 0px 0px 6px;
     max-width: 120px;
     background-color: ${(props) => props.theme.color.sidebarColor};
+    color: #fff;
 `;
 
 const ButtonSearch = styled.button`

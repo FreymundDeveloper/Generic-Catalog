@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import { darken } from 'polished';
 
 export const ButtonClose = ({ onClose }) => {
-  return (
-    <CloseButton onClick={onClose}>&times;</CloseButton>
-  );
+    return (
+      <CloseButton onClick={onClose}>&times;</CloseButton>
+    );
 };
 
 const CloseButton = styled.button`

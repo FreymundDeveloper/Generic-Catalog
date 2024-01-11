@@ -48,4 +48,4 @@ class PrimeGenerator {
     }
 }
 
-PrimeGenerator.main(); // Running in cd ./Challenger/Questions/Question3 - node questionThree.js
+PrimeGenerator.main(); // Running in cd ./challenge/Questions/Question3 - node questionThree.js

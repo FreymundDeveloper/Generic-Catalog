@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-//import styled from 'styled-components';
 import { ButtonApply, ContainerDivider, ContainerSidebar, InputSearch, TopicGeneral, TopicPrice } from '../../components';
 
 export const Sidebar = ({ initialContent, onContentChange }) => {
