@@ -33,6 +33,7 @@ const Logo = styled.img`
     height: 50px;
     margin-left: 10px;
     cursor: pointer;
+    filter: brightness(1) saturate(100%) hue-rotate(200deg);
 `;
 
 const RightSection = styled.div`
