@@ -14,7 +14,7 @@ Some technologies used:
 
 ## Questions
 
-All answers to questions are found in ".txt" or ".js" files within "./challenge".
+All answers to questions(1 to 6) are found in ".txt" or ".js" files within "./challenge/".
 
 ## Routes
 
@@ -24,8 +24,9 @@ The route is linked to the address "localhost:3001/products ...". The backend ru
 
 ## Running the app
 
-**Obs 1**: Make sure the Backend is running before starting the Frontend, otherwise bugs may occur.
-**Obs 2**: Front-end tests return console errors, related to route calls. However, they do not affect the integrity of the tests (they are just basic rendering tests).
+**Obs 1**: Make sure the Backend is running before starting the Frontend, otherwise bugs may occur;
+**Obs 2**: Front-end tests return console errors, related to route calls. However, they do not affect the integrity of the tests (they are just basic rendering tests);
+**Obs 3**: Don't forget to install dependencies, both backend and frontend.
 
 ```bash
 # Installation
