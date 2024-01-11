@@ -21,7 +21,7 @@ export const Card = ({ cardData }) => {
             <CardContent>
                 <CardName>{name}</CardName>
                 <PriceContainer>
-                    {available_sizes.length === 0 && (
+                    {Array.isArray(available_sizes) && available_sizes.length === 0 && (
                           <SoldOutText>Sold Off</SoldOutText>
                     )}
                     <CardPrice>R$ {price}</CardPrice>

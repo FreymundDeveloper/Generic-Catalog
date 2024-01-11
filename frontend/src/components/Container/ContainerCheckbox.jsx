@@ -14,9 +14,9 @@ const TopicContainer = styled.div`
     margin-bottom: 2px;
 
     p {
-      margin-bottom: 1px;
-      margin-left: 2px;
-      font-size: 16px;
+        margin-bottom: 1px;
+        margin-left: 2px;
+        font-size: 16px;
     }
 `;
 
