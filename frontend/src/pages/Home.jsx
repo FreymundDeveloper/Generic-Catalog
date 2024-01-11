@@ -1,25 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import axios from 'axios';
 import { ContainerCard, Navbar, Sidebar } from '../components';
-
-const objTest = [{
-        imageUrl: "https://static.lojanba.com/produtos/camiseta-regata-nba-adidas-swingman-chicago-bulls-rose/68/D13-0209-068/D13-0209-068_zoom1.jpg?ts=1600856952",
-        seller: "Adidased",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        price: 399.99,
-        name: "Regata do Chicago Bulls"
-    },
-    {
-        imageUrl: "https://static.lojanba.com/produtos/camiseta-regata-nba-adidas-swingman-chicago-bulls-rose/68/D13-0209-068/D13-0209-068_zoom1.jpg?ts=1600856952",
-        seller: "Adidased",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        price: 399.99,
-        name: "Regata do Chicago Bulls"
-    }
-]
 
 export const Home = () => {
     const [sidebarFilter, setSidebarFilter] = useState("");
+    const [objTest, setObjTest] = useState([]);
+
+    useEffect(() => {
+        axios.get('http://localhost:3001/products')
+            .then(response => {
+                setObjTest(response.data);
+            })
+            .catch(error => {
+                console.error('Error to found data:', error);
+            });
+    }, []);
 
     const handleSidebarFilterChange = (filterContent) => {
         setSidebarFilter(filterContent);

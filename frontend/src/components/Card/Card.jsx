@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Modal } from '../../components';
 
 export const Card = ({ cardData }) => {
-    const { imageUrl, name, price, description, seller } = cardData;
+    const { image_url, name, price, details, seller } = cardData;
     const [modalOpen, setModalOpen] = useState(false);
 
     const openModal = () => {
@@ -17,13 +17,13 @@ export const Card = ({ cardData }) => {
   return (
     <Container>
         <CardContainer onClick={openModal}>
-            <CardImage src={imageUrl} alt={name} />
+            <CardImage src={image_url} alt={name} />
             <CardContent>
                 <CardName>{name}</CardName>
                 <CardPrice>R$ {price}</CardPrice>
             </CardContent>
         </CardContainer>
-        <Modal isOpen={modalOpen} description={description} seller={seller} onClose={closeModal} />
+        <Modal isOpen={modalOpen} description={details} seller={seller} onClose={closeModal} />
     </Container>
   );
 };
@@ -60,6 +60,7 @@ const CardContent = styled.div`
 
 const CardName = styled.h3`
   font-size: 16px;
+  height: 42px;
   margin: 8px 0;
   text-align: left;
 `;
