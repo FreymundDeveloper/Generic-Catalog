@@ -58,6 +58,7 @@ const CheckboxLabel = styled.label`
   font-size: 14px;
   margin-bottom: 1px;
   flex-basis: 50%;
+  color: ${(props) => props.theme.color.checkboxColor};
 `;
 
 const CheckboxInput = styled.input`

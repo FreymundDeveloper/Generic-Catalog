@@ -5,6 +5,7 @@ const bodyColor = 'linear-gradient(#121212, #142247)',
     cardColor = '#242429',
     navbarColor = '#22222c',
     sidebarColor = '#393949',
+    checkboxColor = '#838080',
     buttonColor = '#01420b';
 
 const theme = {
@@ -14,6 +15,7 @@ const theme = {
         cardColor,
         navbarColor,
         sidebarColor,
+        checkboxColor,
         buttonColor,
     }
 }
