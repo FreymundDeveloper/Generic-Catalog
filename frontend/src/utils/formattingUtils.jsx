@@ -12,7 +12,7 @@ export const arrayToQueryString = (title, arr) => {
     return `${title}=${arr.join(",")}`;
 }
 
-export const queryParamsBuilder = (dataArray) => {
+export const queryParamsBuilder = (dataArray, name = "") => {
     const parameters = ['types', 'availableSizes', 'sellers', 'sports'];
     const resultArray = [];
 
@@ -23,10 +23,10 @@ export const queryParamsBuilder = (dataArray) => {
                 resultArray.push(queryString);
             }
         } else {
-            resultArray.push(value);
+            name === "" || name === "name=" ? resultArray.push(value) : resultArray.push(`${value}&${name}`);
         }
     });
     const finalResult = resultArray.join("&");
 
-    return `?${finalResult}`;
+    return finalResult === "" ? `?${name}` : `?${finalResult}`;
 };

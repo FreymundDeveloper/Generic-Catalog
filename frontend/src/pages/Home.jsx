@@ -25,8 +25,8 @@ export const Home = () => {
     }, [sidebarFilter]);
     
 
-    const handleSidebarFilterChange = (filterContent) => {
-        setSidebarFilter(queryParamsBuilder(filterContent));
+    const handleSidebarFilterChange = (filterContent, name) => {
+        setSidebarFilter(queryParamsBuilder(filterContent, name));
     };
 
     return (

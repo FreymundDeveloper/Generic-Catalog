@@ -6,6 +6,7 @@ export * from './Container/ContainerCheckbox';
 export * from './Container/ContainerDivider';
 export * from './Container/ContainerNavbar';
 export * from './Container/ContainerSidebar';
+export * from './Input/InputSearch';
 export * from './Modal/Modal';
 export * from './Card/Card';
 export * from './Navbar/Navbar';

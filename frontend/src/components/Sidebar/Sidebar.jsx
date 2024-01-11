@@ -1,20 +1,21 @@
 import React, { useState, useEffect } from 'react';
 //import styled from 'styled-components';
-import { ButtonApply, ContainerDivider, ContainerSidebar, TopicGeneral, TopicPrice } from '../../components';
+import { ButtonApply, ContainerDivider, ContainerSidebar, InputSearch, TopicGeneral, TopicPrice } from '../../components';
 
 export const Sidebar = ({ initialContent, onContentChange }) => {
     const [content, setContent] = useState(initialContent);
     const [selectedOptions, setSelectedOptions] = useState([]);
+    const [searchValue, setSearchValue] = useState('');
 
     const handleApply = () => {
         if (onContentChange) {
-            onContentChange(content);
+            onContentChange(content, searchValue);
         }
     };
 
     useEffect(() => {
         setContent(selectedOptions);
-    }, [selectedOptions, setSelectedOptions]);
+    }, [selectedOptions, setSelectedOptions, searchValue]);
 
     const handleSelectionChange = (selectedCheckboxes) => {
         setSelectedOptions((prevSelectedOptions) => {
@@ -32,10 +33,14 @@ export const Sidebar = ({ initialContent, onContentChange }) => {
     
             const updatedOptionsArray = Object.values(updatedOptions);
     
-            if (updatedOptionsArray.length > 5) updatedOptionsArray.length = 5;
+            if (updatedOptionsArray.length > 6) updatedOptionsArray.length = 6;
     
             return updatedOptionsArray;
         });
+    };
+
+    const handleInputChange = (name) => {
+        setSearchValue(name);
     };
     
     const handleMaxValueChange = (newValue) => {
@@ -46,7 +51,7 @@ export const Sidebar = ({ initialContent, onContentChange }) => {
                 (prevSelectedOptions[2] === undefined ? [] : prevSelectedOptions[2]),
                 (prevSelectedOptions[3] === undefined ? [] : prevSelectedOptions[3]),
                 newValue,
-            ].slice(0, 5);
+            ].slice(0, 6);
     
             return updatedOptionsArray;
         });
@@ -54,6 +59,8 @@ export const Sidebar = ({ initialContent, onContentChange }) => {
 
     return (
         <ContainerSidebar>
+            <InputSearch type="text" onSelectionChange={handleInputChange} onClick={handleApply} />
+            <ContainerDivider orientation={"width"} />
             <TopicPrice title="Price" maxValue={600} onValueChange={handleMaxValueChange} />
             <ContainerDivider orientation={"width"} />
             <TopicGeneral title="Type" options={['Camiseta', 'Regata', 'Calção', 'Acessório']} onSelectionChange={(selectedCheckboxes) => handleSelectionChange(selectedCheckboxes)} />
