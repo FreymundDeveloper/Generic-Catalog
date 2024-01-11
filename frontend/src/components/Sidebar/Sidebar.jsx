@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 //import styled from 'styled-components';
 import { ButtonApply, ContainerDivider, ContainerSidebar, TopicGeneral, TopicPrice } from '../../components';
 
@@ -7,14 +7,14 @@ export const Sidebar = ({ initialContent, onContentChange }) => {
     const [selectedOptions, setSelectedOptions] = useState([]);
 
     const handleApply = () => {
-        const modifiedContent = content + 'A';
-
-        setContent(modifiedContent);
-
         if (onContentChange) {
-            onContentChange(modifiedContent);
+            onContentChange(content);
         }
     };
+
+    useEffect(() => {
+        setContent(selectedOptions);
+    }, [selectedOptions, setSelectedOptions]);
 
     const handleSelectionChange = (selectedCheckboxes) => {
         setSelectedOptions((prevSelectedOptions) => {
@@ -36,8 +36,6 @@ export const Sidebar = ({ initialContent, onContentChange }) => {
     
             return updatedOptionsArray;
         });
-    
-        console.log(selectedOptions);
     };
     
     const handleMaxValueChange = (newValue) => {
@@ -52,7 +50,6 @@ export const Sidebar = ({ initialContent, onContentChange }) => {
     
             return updatedOptionsArray;
         });
-        console.log(selectedOptions);
     };
 
     return (

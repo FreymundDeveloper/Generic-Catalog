@@ -17,9 +17,12 @@ export const Home = () => {
             });
     }, []);
 
+    useEffect(() => {
+        console.log(sidebarFilter)
+    }, [sidebarFilter]);
+
     const handleSidebarFilterChange = (filterContent) => {
         setSidebarFilter(filterContent);
-        console.log(sidebarFilter) // <- Use one UseEffect
     };
 
     return (
