@@ -17,6 +17,8 @@ export const Navbar = () => {
             <RightSection>
                 <ButtonNavbar>About Us</ButtonNavbar>
                 <ContainerDivider orientation={"height"} />
+                <ButtonNavbar>Contact</ButtonNavbar>
+                <ContainerDivider orientation={"height"} />
                 <ButtonNavbar>Login</ButtonNavbar>
             </RightSection>
         </ContainerNavbar>

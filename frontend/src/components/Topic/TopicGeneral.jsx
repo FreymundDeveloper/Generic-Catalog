@@ -43,4 +43,5 @@ const CheckboxLabel = styled.label`
 
 const CheckboxInput = styled.input`
     margin-right: 5px;
+    cursor: pointer;
 `;
