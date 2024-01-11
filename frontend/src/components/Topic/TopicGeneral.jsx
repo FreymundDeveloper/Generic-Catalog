@@ -1,16 +1,21 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { formatTitle } from '../../utils/formattingUtils';
 
-export const TopicGeneral = ({ title, options }) => {
+export const TopicGeneral = ({ title, options, onSelectionChange }) => {
     const [selectedOptions, setSelectedOptions] = useState([]);
+    const formattedTitle = formatTitle(title);
 
     const handleCheckboxChange = (option) => {
         const isSelected = selectedOptions.includes(option);
+        const updatedOptions = isSelected ? selectedOptions.filter((item) => item !== option) : [...selectedOptions, option];
 
-        if (isSelected) {
-            setSelectedOptions(selectedOptions.filter((item) => item !== option));
-        } else {
-            setSelectedOptions([...selectedOptions, option]);
+        setSelectedOptions(updatedOptions);
+
+        if (onSelectionChange) {
+            onSelectionChange({
+                [formattedTitle]: updatedOptions,
+            });
         }
     };
 
@@ -18,12 +23,12 @@ export const TopicGeneral = ({ title, options }) => {
         <TopicContainer>
             <p>{title}</p>
             <CheckboxList>
-              {options.map((option, index) => (
-                <CheckboxLabel key={option}>
-                    <CheckboxInput type="checkbox" value={option} checked={selectedOptions.includes(option)} onChange={() => handleCheckboxChange(option)} />
-                    {option}
-                </CheckboxLabel>
-              ))}
+                {options.map((option, index) => (
+                    <CheckboxLabel key={option}>
+                        <CheckboxInput type="checkbox" value={option} checked={selectedOptions.includes(option)} onChange={() => handleCheckboxChange(option)} />
+                        {option}
+                    </CheckboxLabel>
+                ))}
             </CheckboxList>
         </TopicContainer>
     );
