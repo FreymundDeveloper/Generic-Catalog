@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { darken } from 'polished';
+import { ContainerNavbar } from '../../components';
 
 import LogoNav from '../../assets/imgs/logo.png'
 
@@ -10,7 +11,7 @@ export const Navbar = () => {
     }
 
     return (
-        <NavbarContainer>
+        <ContainerNavbar>
             <LeftSection onClick={callReload}>
                 <Logo src={LogoNav} alt="Logo" />
             </LeftSection>
@@ -19,23 +20,9 @@ export const Navbar = () => {
                 <Divider />
                 <Button>Login</Button>
             </RightSection>
-        </NavbarContainer>
+        </ContainerNavbar>
     );
 };
-
-const NavbarContainer = styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1px;
-    background-color: ${(props) => props.theme.color.navbarColor};
-    color: white;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-`;
 
 const LeftSection = styled.div`
     display: flex;
