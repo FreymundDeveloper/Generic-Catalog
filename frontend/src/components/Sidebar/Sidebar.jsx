@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { ButtonApply } from '../../components';
 
 export const Sidebar = ({ initialContent, onContentChange }) => {
     const [content, setContent] = useState(initialContent);
@@ -15,15 +16,21 @@ export const Sidebar = ({ initialContent, onContentChange }) => {
     };
 
     return (
-        <SidebarWrapper>
-            <SidebarContent>
-                <ApplyContainer>
-                    <ApplyButton onClick={handleApply}>Apply</ApplyButton>
-                </ApplyContainer>
-            </SidebarContent>
-        </SidebarWrapper>
+        <ContainerSidebar>
+            <SidebarWrapper>
+                <SidebarContent>
+                    <ButtonApply onClick={handleApply} />
+                </SidebarContent>
+            </SidebarWrapper>
+        </ContainerSidebar>
     );
 };
+
+const ContainerSidebar = styled.div`
+    display: flex;
+    position: relative;
+    margin-top: 10px;
+`;
 
 const SidebarWrapper = styled.div`
     display: block;
@@ -41,20 +48,4 @@ const SidebarContent = styled.div`
     text-align: left;
     color: white;
     flex-direction: column;
-`;
-
-const ApplyContainer = styled.div`
-    display: flex;
-    justify-content: flex-end;
-    padding-top: 2px;
-`;
-
-const ApplyButton = styled.button`
-    background-color: ${(props) => props.theme.color.buttonColor};
-    color: white;
-    border: none;
-    padding: 6px 10px;
-    cursor: pointer;
-    border-radius: 12px;
-    font-size: 0.8rem;
 `;

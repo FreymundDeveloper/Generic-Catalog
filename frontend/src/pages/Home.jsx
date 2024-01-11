@@ -30,9 +30,7 @@ export const Home = () => {
         <StyledContainer>
             <Navbar />
             <ContentContainer>
-                <SidebarContainer>
-                    <Sidebar initialContent={sidebarFilter} onContentChange={handleSidebarFilterChange} />
-                </SidebarContainer>
+                <Sidebar initialContent={sidebarFilter} onContentChange={handleSidebarFilterChange} />
                 <ContainerCard contentFound={objTest}/>
             </ContentContainer>
         </StyledContainer>
@@ -53,10 +51,4 @@ const ContentContainer = styled.div`
     display: flex;
     position: relative;
     margin-top: 10px;
-`;
-
-const SidebarContainer = styled.div`
-    position: fixed;
-    top: 0;
-    left: 0;
 `;
