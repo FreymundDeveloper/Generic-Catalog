@@ -21,10 +21,10 @@ export const Card = ({ cardData }) => {
             <CardContent>
                 <CardName>{name}</CardName>
                 <PriceContainer>
+                    <CardPrice>R$ {price}</CardPrice>
                     {Array.isArray(available_sizes) && available_sizes.length === 0 && (
                           <SoldOutText>Sold Off</SoldOutText>
                     )}
-                    <CardPrice>R$ {price}</CardPrice>
                 </PriceContainer>
             </CardContent>
         </CardContainer>
